@@ -1,0 +1,47 @@
+---
+- hosts: localhost
+  tasks:
+  - name: apt-get update
+    apt: update_cache=yes
+
+  - name: install base
+    apt: pkg={{ item }} state=installed
+    with_items:
+      - curl
+      - git
+      - make
+      - python
+      - python-setuptools
+      - python-software-properties
+      - rubygems
+      - unzip
+      - zip
+
+  - name: install node apt repo
+    apt_repository: repo=ppa:chris-lea/node.js state=present
+
+  - name: install node
+    apt: pkg=nodejs state=installed update-cache=yes
+
+  - name: install grunt
+    npm: name=grunt-cli state=present global=yes
+
+  - name: install bundler
+    gem: name=bundler state=present user_install=no
+
+  - name: install php54 apt repo
+    apt_repository: repo=ppa:ondrej/php5-oldstable state=present
+
+  - name: install php5.4
+    apt: name={{ item }} state=installed update_cache=yes
+    with_items:
+      - php5
+      - php5-dev
+      - php5-mysql
+      - php-apc
+
+  - name: install composer globally
+    raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
+
+  - name: link create composer symlink
+    file: src=/usr/local/bin/composer.phar dest=/usr/local/bin/composer state=link

@@ -27,7 +27,7 @@
     npm: name=grunt-cli state=present global=yes
 
   - name: install bundler
-    gem: name=bundler state=present user_install=no
+    gem: name=bundler state=present
 
   - name: install php54 apt repo
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present

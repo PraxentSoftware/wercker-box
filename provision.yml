@@ -30,7 +30,7 @@
     gem: name=bundler state=present
 
   - name: bundle install
-    command: bundle install --gemfile=Gemfile
+    command: bundle install --gemfile=Gemfile --deployment
 
   - name: install php54 apt repo
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present

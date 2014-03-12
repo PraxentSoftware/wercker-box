@@ -31,6 +31,11 @@
     with_items:
       - { name: "bundler", other: "" }
       - { name: "capistrano", other: "version=2.15.4" }
+      - { name: "highline", other: "" }
+      - { name: "net-scp", other: "" }
+      - { name: "net-sftp", other: "" }
+      - { name: "net-ssh", other: "" }
+      - { name: "net-ssh-gateway", other: "" }
       - { name: "capistrano-ext", other: "" }
       - { name: "railsless-deploy", other: "" }
 

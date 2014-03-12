@@ -29,6 +29,15 @@
   - name: install bundler
     gem: name=bundler state=present
 
+  - name: install capistrano
+    gem: name=capistrano state=present version=2.5.4
+
+  - name: install capistrano-ext
+    gem: name=capistrano-ext state=present
+
+  - name: install railsless-deploy
+    gem: name=railsless-deploy state=present
+
   - name: install php54 apt repo
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present
 

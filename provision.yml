@@ -27,12 +27,12 @@
     npm: name=grunt-cli state=present global=yes
 
   - name: install gems
-    gem: name={{ item.name }} state=present version={{ item.version }}
+    gem: name={{ item.name }} state=present {{ item.other }}
     with_items:
-      - { name: "bundler", version: "latest" }
-      - { name: "capistrano", version: "2.15.4" }
-      - { name: "capistrano-ext", version: "latest" }
-      - { name: "railsless-deploy", version: "latest" }
+      - { name: "bundler" }
+      - { name: "capistrano", other: "version=2.15.4" }
+      - { name: "capistrano-ext" }
+      - { name: "railsless-deploy" }
 
   - name: install php54 apt repo
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present

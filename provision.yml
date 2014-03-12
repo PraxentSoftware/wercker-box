@@ -28,7 +28,7 @@
 
   - name: install gems
     gem: name={{ item.name }} state=present version={{ item.version }}
-    with-items:
+    with_items:
       - { name: "bundler", varsion: "latest" }
       - { name: "capistrano", varsion: "2.15.4" }
       - { name: "capistrano-ext", varsion: "latest" }

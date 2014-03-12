@@ -6,6 +6,5 @@ Includes:
 - grunt-cli
 - ruby
 - bundler
-- capistrano
 - php5.4
 - composer

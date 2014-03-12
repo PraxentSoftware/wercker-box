@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.0.8
+version: 0.0.9
 inherits: wouter/ubuntu12.04-ansible@0.0.2
 type: main
 platform: ubuntu@12.04
@@ -9,7 +9,6 @@ keywords:
   - grunt-cli
   - ruby
   - bundler
-  - capistrano
   - php5.4
   - composer
 script: |

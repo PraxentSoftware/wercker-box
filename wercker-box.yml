@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.0.3
+version: 0.0.4
 inherits: wouter/ubuntu12.04-ansible@0.0.2
 type: main
 platform: ubuntu@12.04

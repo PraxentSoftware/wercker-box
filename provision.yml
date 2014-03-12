@@ -31,7 +31,7 @@
     with_items:
       - { name: "bundler", other: "" }
       - { name: "capistrano", other: "version=2.15.4" }
-      - { name: "highline", other: "" }
+      - { name: "highline", other: "version=1.6.21" }
       - { name: "net-scp", other: "" }
       - { name: "net-sftp", other: "" }
       - { name: "net-ssh", other: "" }

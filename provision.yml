@@ -29,10 +29,10 @@
   - name: install gems
     gem: name={{ item.name }} state=present version={{ item.version }}
     with_items:
-      - { name: "bundler", varsion: "latest" }
-      - { name: "capistrano", varsion: "2.15.4" }
-      - { name: "capistrano-ext", varsion: "latest" }
-      - { name: "railsless-deploy", varsion: "latest" }
+      - { name: "bundler", version: "latest" }
+      - { name: "capistrano", version: "2.15.4" }
+      - { name: "capistrano-ext", version: "latest" }
+      - { name: "railsless-deploy", version: "latest" }
 
   - name: install php54 apt repo
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present

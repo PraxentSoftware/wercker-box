@@ -41,6 +41,8 @@
       - php5-dev
       - php5-mysql
       - php-apc
+      - php-codesniffer
+      - phpunit
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin

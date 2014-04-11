@@ -7,7 +7,7 @@
     apt: update_cache=yes
 
   - name: install base
-    apt: pkg={{ item }} state=installed
+    apt: pkg={{ item }} state=present
     with_items:
       - curl
       - git
@@ -23,7 +23,7 @@
     apt_repository: repo=ppa:chris-lea/node.js state=present
 
   - name: install node
-    apt: pkg=nodejs state=installed update_cache=yes
+    apt: pkg=nodejs state=present update_cache=yes
 
   - name: install grunt
     npm: name=grunt-cli state=present global=yes
@@ -37,7 +37,7 @@
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present
 
   - name: install php5.4
-    apt: name={{ item }} state=installed update_cache=yes
+    apt: name={{ item }} state=present update_cache=yes
     with_items:
       - php5
       - php5-dev
@@ -54,7 +54,7 @@
     file: src=/usr/local/bin/composer.phar dest=/usr/local/bin/composer state=link
 
   - name: install mongoDB
-    apt: pkg=mongodb state=installed update_cache=yes
+    apt: pkg=mongodb state=present update_cache=yes
 
   - name: check for mongo php extension
     shell: pecl list | grep mongo

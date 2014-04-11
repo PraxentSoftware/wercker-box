@@ -45,6 +45,7 @@
       - php-apc
       - php-codesniffer
       - phpunit
+      - php-pear
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
@@ -55,9 +56,17 @@
   - name: install mongoDB
     apt: pkg=mongodb state=installed update_cache=yes
 
-  - name: install mongoDB php driver
-    apt: pkg=php5-mongo state=installed update_cache=yes
+  - name: check for mongo php extension
+    shell: pecl list | grep mongo
+    register: pecl_mongo_exists
+    ignore_errors: True
+
+  - name: install mongo php extension
+    raw: printf "\n" | sudo pecl install mongo
+    when: pecl_mongo_exists|failed
+
+  - name: configure mongo extension
+    copy: src=files/mongo.ini dest=/etc/php5/mods-available
 
   - name: enable mongoDB php driver
-    raw: sudo php5enmod mongo
-
+    command: php5enmod mongo

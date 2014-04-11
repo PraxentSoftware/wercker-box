@@ -49,3 +49,13 @@
 
   - name: link create composer symlink
     file: src=/usr/local/bin/composer.phar dest=/usr/local/bin/composer state=link
+
+  - name: install mongoDB
+    apt: pkg=mongodb-org state=installed update-cache=yes
+
+  - name: install mongoDB php driver
+    apt: pkg=php5-mongo state=installed update-cache=yes
+
+  - name: enable mongoDB php driver
+    raw: sudo php5enmod mongo
+

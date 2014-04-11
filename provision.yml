@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
+  user: vagrant
+  sudo: yes
   tasks:
   - name: apt-get update
     apt: update_cache=yes
@@ -43,6 +45,7 @@
       - php-apc
       - php-codesniffer
       - phpunit
+      - php5-json
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
@@ -51,7 +54,7 @@
     file: src=/usr/local/bin/composer.phar dest=/usr/local/bin/composer state=link
 
   - name: install mongoDB
-    apt: pkg=mongodb-org state=installed update-cache=yes
+    apt: pkg=mongodb state=installed update-cache=yes
 
   - name: install mongoDB php driver
     apt: pkg=php5-mongo state=installed update-cache=yes

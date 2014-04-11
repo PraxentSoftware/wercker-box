@@ -37,7 +37,7 @@
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present
 
   - name: install php5.4
-    apt: name={{ item }} state=installed update_cache=yes
+    apt: name={{ item }} state=installed update-cache=yes
     with_items:
       - php5
       - php5-dev

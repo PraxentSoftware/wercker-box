@@ -10,3 +10,4 @@ Includes:
 - bundler
 - php5.4
 - composer
+- mongoDB

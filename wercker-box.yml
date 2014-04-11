@@ -11,6 +11,6 @@ keywords:
   - bundler
   - php5.4
   - composer
-  - mongo
+  - mongoDB
 script: |
   sudo ansible-playbook -v provision.yml -i inventory -c local

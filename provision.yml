@@ -33,6 +33,15 @@
     with_items:
       - { name: "bundler", other: "" }
 
+  - name: mongodb | get 10gen apt key
+    command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+
+  - name: mongodb | get 10gen apt repository
+    copy: src=files/apt-source-mongodb dest=/etc/apt/sources.list.d/10gen.list mode=755
+
+  - name: mongodb | install
+    apt: pkg=mongodb-10gen=2.4.10 state=installed update_cache=yes
+
   - name: install php54 apt repo
     apt_repository: repo=ppa:ondrej/php5-oldstable state=present
 
@@ -53,8 +62,8 @@
   - name: link create composer symlink
     file: src=/usr/local/bin/composer.phar dest=/usr/local/bin/composer state=link
 
-  - name: install mongoDB
-    apt: pkg=mongodb state=present update_cache=yes
+  - name: update composer
+    command: composer self-update
 
   - name: check for mongo php extension
     shell: pecl list | grep mongo

@@ -79,3 +79,9 @@
 
   - name: enable mongoDB php driver
     command: php5enmod mongo
+
+  - name: configure pear for auto_discover
+    command: pear config-set auto_discover 1
+
+  - name: install PHPUnit
+    command: pear install pear.phpunit.de/PHPUnit 

@@ -23,5 +23,6 @@ script: |
   git checkout v1.4.5
   sudo make install
   type ansible || { echo "ansible not found"; exit 1; }
+  cd
 
   sudo ansible-playbook -v provision.yml -i inventory -c local

@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.1.1
+version: 0.1.2
 inherits: wouter/ubuntu12.04-ansible@0.0.2
 type: main
 platform: ubuntu@12.04
@@ -7,9 +7,10 @@ description: Astonish Design standard Wercker Box
 keywords:
   - nodejs
   - grunt-cli
+  - bower
   - ruby
   - bundler
-  - php5.4
+  - php54
   - composer
   - mongoDB
 script: |

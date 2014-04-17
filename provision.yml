@@ -28,6 +28,9 @@
   - name: install grunt
     npm: name=grunt-cli state=present global=yes
 
+  - name: install bower
+    npm: name=bower state=present global=yes
+
   - name: install gems
     gem: name={{ item.name }} state=present {{ item.other }}
     with_items:

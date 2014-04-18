@@ -54,8 +54,20 @@
       - php5-mysql
       - php-apc
       - php-codesniffer
-      - phpunit
       - php-pear
+
+  - name: check for phpunit
+    shell: pear list -a | grep PHPUnit
+    register: pear_phpunit_exists
+    ignore_errors: yes
+
+  - name: configure pear for auto_discover
+    command: pear config-set auto_discover 1
+    when: pear_phpunit_exists|failed
+
+  - name: install PHPUnit
+    command: pear install pear.phpunit.de/PHPUnit
+    when: pear_phpunit_exists|failed
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
@@ -80,17 +92,3 @@
 
   - name: enable mongoDB php driver
     command: php5enmod mongo
-
-  - name: check for phpunit
-    shell: pear list -a | grep PHPUnit
-    register: pear_phpunit_exists
-    ignore_errors: yes
-
-  - name: configure pear for auto_discover
-    command: pear config-set auto_discover 1
-    when: pear_phpunit_exists|failed
-
-  - name: install PHPUnit
-    command: pear install pear.phpunit.de/PHPUnit
-    when: pear_phpunit_exists|failed
-

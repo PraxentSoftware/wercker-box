@@ -31,10 +31,8 @@
   - name: install bower
     npm: name=bower state=present global=yes
 
-  - name: install gems
-    gem: name={{ item.name }} state=present {{ item.other }}
-    with_items:
-      - { name: "bundler", other: "" }
+  - name: install bundler
+    gem: name=bundler state=present
 
   - name: mongodb | get 10gen apt key
     command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10

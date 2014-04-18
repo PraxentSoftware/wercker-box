@@ -32,7 +32,7 @@
     npm: name=bower state=present global=yes
 
   - name: install bundler
-    gem: name=bundler state=present
+    gem: name=bundler state=latest user_install=no
 
   - name: mongodb | get 10gen apt key
     command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10

@@ -55,6 +55,7 @@
       - php-codesniffer
       - phpunit
       - php-pear
+      - ext-curl
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin

@@ -28,10 +28,11 @@
   - name: install grunt
     npm: name=grunt-cli state=present global=yes
 
-  - name: install gems
-    gem: name={{ item.name }} state=present {{ item.other }}
-    with_items:
-      - { name: "bundler", other: "" }
+  - name: install bower
+    npm: name=bower state=present global=yes
+
+  - name: install bundler
+    gem: name=bundler state=latest user_install=no
 
   - name: mongodb | get 10gen apt key
     command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
@@ -53,9 +54,21 @@
       - php5-mysql
       - php-apc
       - php-codesniffer
-      - phpunit
       - php-pear
       - ext-curl
+
+  - name: check for phpunit
+    shell: pear list -a | grep PHPUnit
+    register: pear_phpunit_exists
+    ignore_errors: yes
+
+  - name: configure pear for auto_discover
+    command: pear config-set auto_discover 1
+    when: pear_phpunit_exists|failed
+
+  - name: install PHPUnit
+    command: pear install pear.phpunit.de/PHPUnit
+    when: pear_phpunit_exists|failed
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
@@ -80,9 +93,3 @@
 
   - name: enable mongoDB php driver
     command: php5enmod mongo
-
-  - name: configure pear for auto_discover
-    command: pear config-set auto_discover 1
-
-  - name: install PHPUnit
-    command: pear install pear.phpunit.de/PHPUnit 

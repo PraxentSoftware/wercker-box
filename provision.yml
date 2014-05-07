@@ -55,7 +55,7 @@
       - php-apc
       - php-codesniffer
       - php-pear
-      - ext-curl
+      - php5-curl
 
   - name: check for phpunit
     shell: pear list -a | grep PHPUnit

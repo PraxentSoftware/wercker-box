@@ -59,7 +59,7 @@
       - php5-mcrypt
 
   - name: make mcrypt extension available
-    file: src=/etc/php5/conf.d/mcrypt.ini dest=/etc/php5/mods-available/mcrypt.ini state=link
+    file: src=/etc/php5/mods-available/mcrypt.ini dest=/etc/php5/conf.d/mcrypt.ini state=link
     
   - name: enable mcrypt extension
     command: php5enmod mcrypt

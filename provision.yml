@@ -58,12 +58,6 @@
       - php5-curl
       - php5-mcrypt
 
-  - name: make mcrypt extension available
-    file: src=/etc/php5/mods-available/mcrypt.ini dest=/etc/php5/conf.d/mcrypt.ini state=link
-    
-  - name: enable mcrypt extension
-    command: php5enmod mcrypt
-
   - name: check for phpunit
     shell: pear list -a | grep PHPUnit
     register: pear_phpunit_exists

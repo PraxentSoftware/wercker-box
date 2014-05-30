@@ -50,13 +50,14 @@
     apt: name={{ item }} state=present update_cache=yes
     with_items:
       - php5
+      - php5-curl
       - php5-dev
       - php5-mysql
+      - php5-mcrypt
+      - php5-xdebug
       - php-apc
       - php-codesniffer
       - php-pear
-      - php5-curl
-      - php5-mcrypt
 
   - name: check for phpunit
     shell: pear list -a | grep PHPUnit

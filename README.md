@@ -8,6 +8,7 @@ Includes:
 - grunt-cli
 - ruby
 - bundler
-- php5.4
+- php54
 - composer
+- phpunit
 - mongoDB

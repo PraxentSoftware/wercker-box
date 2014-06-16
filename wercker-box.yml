@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.5
+version: 0.2.6
 inherits: wouter/ubuntu12.04-ansible@0.0.2
 type: main
 platform: ubuntu@12.04
@@ -15,13 +15,17 @@ keywords:
   - composer
   - mongoDB
 packages:
-  - ansible@1.4.5
+  - ansible@1.6.2
+  - php54
+  - nodejs
+  - ruby
+  - mongoDB
 script: |
   sudo apt-get update
-  sudo apt-get install git build-essential python-jinja2 python-paramiko python-apt python-yaml -y
+  sudo apt-get install git python-dev build-essential python-jinja2 python-paramiko python-apt python-yaml -y
   git clone git://github.com/ansible/ansible.git
   cd ansible
-  git checkout v1.4.5
+  git checkout v1.6.3
   sudo make install
   type ansible || { echo "ansible not found"; exit 1; }
   cd -

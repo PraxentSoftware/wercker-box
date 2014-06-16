@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  user: vagrant
+  remote_user: vagrant
   sudo: yes
   tasks:
   - name: apt-get update
@@ -35,7 +35,7 @@
     gem: name=bundler state=latest user_install=no
 
   - name: mongodb | get 10gen apt key
-    command: apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+    apt_key: keyserver=keyserver.ubuntu.com id=7F0CEB10 state=present
 
   - name: mongodb | get 10gen apt repository
     copy: src=files/apt-source-mongodb dest=/etc/apt/sources.list.d/10gen.list mode=755
@@ -59,19 +59,6 @@
       - php-codesniffer
       - php-pear
 
-  - name: check for phpunit
-    shell: pear list -a | grep PHPUnit
-    register: pear_phpunit_exists
-    ignore_errors: yes
-
-  - name: configure pear for auto_discover
-    command: pear config-set auto_discover 1
-    when: pear_phpunit_exists|failed
-
-  - name: install PHPUnit
-    command: pear install pear.phpunit.de/PHPUnit
-    when: pear_phpunit_exists|failed
-
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin
 
@@ -80,6 +67,9 @@
 
   - name: update composer
     command: composer self-update
+
+  - name: install phpunit
+    get_url: url=https://phar.phpunit.de/phpunit.phar dest=/usr/local/bin/phpunit mode=755
 
   - name: check for mongo php extension
     shell: pecl list | grep mongo

@@ -22,7 +22,7 @@ packages:
   - mongoDB
 script: |
   sudo apt-get update
-  sudo apt-get install git python-dev build-essential python-jinja2 python-paramiko python-apt python-yaml -y
+  sudo apt-get install git build-essential python-setuptools python-dev python-jinja2 python-paramiko python-apt python-yaml -y
   git clone git://github.com/ansible/ansible.git
   cd ansible
   git checkout v1.6.3

@@ -1,6 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.6
-inherits: wouter/ubuntu12.04-ansible@0.0.2
+version: 0.2.7
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box
@@ -16,7 +15,7 @@ keywords:
   - mongoDB
 packages:
   - ansible@1.6.2
-  - php54
+  - php@5.4
   - nodejs
   - ruby
   - mongoDB

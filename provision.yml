@@ -55,6 +55,7 @@
       - php5-mysql
       - php5-mcrypt
       - php5-xdebug
+      - php5-xsl
       - php-apc
       - php-codesniffer
       - php-pear

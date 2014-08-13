@@ -25,6 +25,12 @@
   - name: install node
     apt: pkg=nodejs state=present update_cache=yes
 
+  - name: Make npm tmp folders
+    command: 'mkdir -p ~/tmp ~/.npm'
+
+  - name: Set permissions on npm tmp folders
+    raw: 'chown -fR `whoami`:`whoami` ~/.npm ~/tmp'
+
   - name: install grunt
     npm: name=grunt-cli state=present global=yes
 

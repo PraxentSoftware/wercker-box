@@ -12,3 +12,4 @@ Includes:
 - composer
 - phpunit
 - mongoDB
+- phantomjs

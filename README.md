@@ -14,7 +14,7 @@ Includes:
 - mongoDB
 - phantomjs
 
-## To Test and build locally, use [Vagrant](https://www.vagrantup.com/):
+## To test and build locally, use [Vagrant](https://www.vagrantup.com/):
 
 ### Set up the test box
   - cd into a sandbox directory `mkdir ../sandbox; cd ../sandbox`
@@ -23,7 +23,8 @@ Includes:
   - edit 'hosts' on line two to be 'all':
 ```---
    - hosts: all
-     remote_user: vagrant```
+     remote_user: vagrant
+```
   - Run `vagrant up`
 
 ### Make changes and have them applied

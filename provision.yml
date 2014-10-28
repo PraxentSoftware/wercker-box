@@ -37,6 +37,9 @@
   - name: install bower
     npm: name=bower state=present global=yes
 
+  - name: install phantomjs
+    npm: name=phantomjs state=present global=yes
+
   - name: install bundler
     gem: name=bundler state=latest user_install=no
 

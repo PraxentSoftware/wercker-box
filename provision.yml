@@ -1,5 +1,5 @@
 ---
-- hosts: local
+- hosts: localhost
   remote_user: vagrant
   sudo: yes
   tasks:
@@ -22,9 +22,6 @@
 
   - name: install node apt repo
     apt_repository: repo=ppa:chris-lea/node.js state=present
-
-  - name: install phantomjs
-    raw: 
 
   - name: install node
     apt: pkg=nodejs state=present update_cache=yes

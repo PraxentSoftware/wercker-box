@@ -26,34 +26,11 @@
   - name: install node
     apt: pkg=nodejs state=present update_cache=yes
 
-  - name: Make npm tmp folders
-    command: 'mkdir -p ~/tmp ~/.npm'
-
-  - name: Set permissions on npm tmp folders
-    raw: 'chown -fR `whoami`:`whoami` ~/.npm ~/tmp'
-
   - name: install grunt
     npm: name=grunt-cli state=present global=yes
 
   - name: install bower
-    npm: name=bower state=present global=yes
-
-  - name: install phantomjs
-    get_url: > 
-      url=https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
-      dest=/usr/local/share
-
-  - name: unarchive phantomjs
-    raw: cd /usr/local/share && tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2
-
-  - name: create phantomjs symlinks
-    raw: ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/share/phantomjs
-
-  - name: create phantomjs symlinks
-    raw: ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs
-
-  - name: create phantomjs symlinks
-    raw: ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs  
+    npm: name=bower state=present global=yes 
 
   - name: install bundler
     gem: name=bundler state=latest user_install=no

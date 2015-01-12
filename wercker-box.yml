@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.12
+version: 0.2.13
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box
@@ -10,12 +10,12 @@ keywords:
   - bower
   - ruby
   - bundler
-  - php54
+  - php55
   - composer
   - mongoDB
 packages:
   - ansible@1.6.2
-  - php@5.4
+  - php@5.5
   - nodejs
   - ruby
   - mongoDB

@@ -8,11 +8,13 @@ Includes:
 - grunt-cli
 - ruby
 - bundler
+- bower
 - php55
 - composer
 - phpunit
 - mongoDB
 - phantomjs
+- java
 
 ## To test and build locally, use [Vagrant](https://www.vagrantup.com/):
 

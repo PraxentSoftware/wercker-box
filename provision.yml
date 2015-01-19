@@ -18,6 +18,8 @@
       - unzip
       - zip
       - libicu48
+      - default-jre
+      - default-jdk
 
   - name: install node apt repo
     apt_repository: repo=ppa:chris-lea/node.js state=present

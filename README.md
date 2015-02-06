@@ -15,6 +15,7 @@ Includes:
 - mongoDB
 - phantomjs
 - java
+- MySQL
 
 ## To test and build locally, use [Vagrant](https://www.vagrantup.com/):
 

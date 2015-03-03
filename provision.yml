@@ -20,8 +20,6 @@
       - libicu48
       - default-jre
       - default-jdk
-      - mysql-server
-      - mysql-client
 
   - name: install node apt repo
     apt_repository: repo=ppa:chris-lea/node.js state=present

@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.16
+version: 0.2.17
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box
@@ -12,7 +12,6 @@ keywords:
   - bundler
   - php55
   - composer
-  - mongoDB
   - mysql
 packages:
   - ansible@1.6.2
@@ -20,7 +19,6 @@ packages:
   - nodejs
   - ruby
   - mongoDB
-  - mysql
   - phantomjs@1.9.7
 script: |
   sudo apt-get update

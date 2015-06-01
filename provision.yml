@@ -9,17 +9,28 @@
     apt: pkg={{ item }} state=present
     with_items:
       - curl
+      - default-jdk
+      - default-jre
       - git
+      - libicu48
       - make
       - python
       - python-setuptools
       - python-software-properties
-      - rubygems
+      - ruby1.9.1
+      - ruby1.9.1-dev
+      - rubygems1.9.1
+      - irb1.9.1
+      - ri1.9.1
+      - rdoc1.9.1
       - unzip
       - zip
-      - libicu48
-      - default-jre
-      - default-jdk
+
+  - name: set ruby version to 1.9.1
+    command: update-alternatives --set ruby /usr/bin/ruby1.9.1
+
+  - name: set gem version to 1.9.1
+    command: update-alternatives --set gem /usr/bin/gem1.9.1
 
   - name: install node apt repo
     apt_repository: repo=ppa:chris-lea/node.js state=present

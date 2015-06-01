@@ -14,7 +14,7 @@ keywords:
   - composer
   - mysql
 packages:
-  - ansible@1.6.2
+  - ansible@1.8.2
   - php@5.5
   - nodejs
   - ruby@1.9.1
@@ -25,7 +25,7 @@ script: |
   sudo apt-get install git build-essential python-setuptools python-dev python-jinja2 python-paramiko python-apt python-yaml -y
   git clone git://github.com/ansible/ansible.git
   cd ansible
-  git checkout v1.6.3
+  git checkout v1.7.2
   sudo make install
   type ansible || { echo "ansible not found"; exit 1; }
   cd -

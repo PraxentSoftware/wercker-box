@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.18
+version: 0.2.19
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box
@@ -12,7 +12,7 @@ keywords:
   - bundler
   - php55
   - composer
-  - mysql
+  - sqlite
 packages:
   - ansible@1.8.2
   - php@5.5

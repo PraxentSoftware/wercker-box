@@ -107,3 +107,12 @@
 
   - name: enable mongoDB php driver
     command: php5enmod mongo
+
+  - name: check for sqlite php extension
+    shell: pecl list | grep sqlite
+    register: pecl_sqlite_exists
+    ignore_errors: True
+
+  - name: install sqlite php extension
+    raw: printf "\n" | sudo pecl install sqlite
+    when: pecl_sqlite_exists|failed

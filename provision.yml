@@ -79,6 +79,7 @@
       - php-apc
       - php-codesniffer
       - php-pear
+      - php5-sqlite3
 
   - name: install composer globally
     raw: curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin

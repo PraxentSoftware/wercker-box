@@ -27,6 +27,7 @@
       - zip
       - sqlite3
       - libsqlite3-dev
+      - gawk
 
   - name: set ruby version to 1.9.1
     command: update-alternatives --set ruby /usr/bin/ruby1.9.1

@@ -41,14 +41,14 @@
   - name: install node
     apt: pkg=nodejs state=present update_cache=yes
 
-  - name: install bower
-    npm: name=bower state=present global=yes
-
-  - name: install grunt
-    npm: name=grunt-cli state=present global=yes
-
-  - name: install phantomjs
-    npm: name=phantomjs state=present global=yes
+  - name: install global node modules
+    apt: name={{ item }} state=present global=yes
+    with_items:
+      - bower
+      - grunt-cli
+      - node-sass
+      - uglify-js
+      - phantomjs
 
   - name: install bundler
     gem: name=bundler state=latest user_install=no

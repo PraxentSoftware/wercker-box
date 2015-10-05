@@ -48,6 +48,7 @@
       - grunt-cli
       - node-sass
       - uglify-js
+      - uglifycss
       - phantomjs
 
   - name: install bundler

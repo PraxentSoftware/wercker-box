@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.20
+version: 0.2.21
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box
@@ -20,6 +20,8 @@ packages:
   - ruby@1.9.1
   - mongoDB
   - phantomjs@1.9.7
+  - uglify-js
+  - node-sass
 script: |
   sudo apt-get update
   sudo apt-get install git build-essential python-setuptools python-dev python-jinja2 python-paramiko python-apt python-yaml -y

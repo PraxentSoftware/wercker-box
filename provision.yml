@@ -42,7 +42,7 @@
     apt: pkg=nodejs state=present update_cache=yes
 
   - name: install global node modules
-    npm: name={{ item }} state=present global=yes
+    npm: name={{ item }} state=present global=yes path=/usr/local/bin
     with_items:
       - bower
       - grunt-cli

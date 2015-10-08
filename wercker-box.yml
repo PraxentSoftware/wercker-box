@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.22
+version: 0.2.23
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box

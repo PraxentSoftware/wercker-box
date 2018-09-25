@@ -17,23 +17,23 @@
       - python
       - python-setuptools
       - python-software-properties
-      - ruby1.9.1
-      - ruby1.9.1-dev
-      - rubygems1.9.1
-      - irb1.9.1
-      - ri1.9.1
-      - rdoc1.9.1
+      - ruby2.2.8
+      - ruby2.2.8-dev
+      - rubygems2.2.8
+      - irb2.2.8
+      - ri2.2.8
+      - rdoc2.2.8
       - unzip
       - zip
       - sqlite3
       - libsqlite3-dev
       - gawk
 
-  - name: set ruby version to 1.9.1
-    command: update-alternatives --set ruby /usr/bin/ruby1.9.1
+  - name: set ruby version to 2.2.8
+    command: update-alternatives --set ruby /usr/bin/ruby2.2.8
 
-  - name: set gem version to 1.9.1
-    command: update-alternatives --set gem /usr/bin/gem1.9.1
+  - name: set gem version to 2.2.8
+    command: update-alternatives --set gem /usr/bin/gem2.2.8
 
   - name: install node apt repo
     apt_repository: repo=ppa:chris-lea/node.js state=present

@@ -1,5 +1,5 @@
 name: astonish-wercker-box
-version: 0.2.23
+version: 0.2.24
 type: main
 platform: ubuntu@12.04
 description: Astonish Design standard Wercker Box
@@ -17,7 +17,7 @@ packages:
   - ansible@1.8.2
   - php@5.5
   - nodejs
-  - ruby@1.9.1
+  - ruby@2.2.8
   - mongoDB
   - phantomjs@1.9.7
   - uglify-js

@@ -6,7 +6,7 @@ Provisioned with Ansible
 Includes:
 - nodejs
 - grunt-cli
-- ruby1.9.1
+- ruby2.2.8
 - bundler
 - bower
 - php55
